@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <title>Enchanted Forest Adventure</title>
+  <link rel="stylesheet" href="../css/story.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> <!-- ✅ Added Vue.js -->
+</head>
+
+<body onload="startStory(1)">
+
+  <div id="app"> <!-- ✅ Vue controls this -->
+    <main></main>
+
+    <footer>
+      <button class="btn" id="question" @click="showModal = true">
+        <i class="fa fa-question"></i>
+      </button>
+      <p>&copy; 2025 Interactive Stories. All rights reserved.</p>
+    </footer>
+
+    <!-- ✅ Modal (Now inside Vue app) -->
+    <div v-if="showModal" class="modal">
+      <div class="modal-content">
+        <span class="close" @click="showModal = false">&times;</span>
+        <h2>About Interactive Stories</h2>
+        <p>Welcome to Interactive Stories! Here, your choices shape the journey.</p>
+        <p>How to Use This Page: </p>
+        <p>1. Click "Start Story" on the story of your choice.</p>
+        <p>2. Read the introduction and select an option to shape the story's direction.</p>
+        <p>3. Continue making choices to progress through the story.</p>
+        <p>4. If you're unsatisfied with the story or reacehd the end of your story, type "stop" at any time to view
+          an overview of the story you've created so far.</p>
+        <p>5. Then, You can then return to the home page and start a new story.</p>
+        <button class="modal-close-btn" @click="showModal = false">Close</button>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <script src="../js/3script.js"></script>
+</body>
+</html>

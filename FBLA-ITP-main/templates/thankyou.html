@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="../css/thankyou.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="thank-you-container">
+        <h1>🎉 Thank You for Playing! 🎉</h1>
+        <p>Your choices have shaped your adventure. View or download your journey summary below.</p>
+
+        <pre id="report"></pre>
+        <button id="download-report">📥 Download Adventure Report</button>
+        <button onclick="window.location.href='index.html'">🏠 Back to Home</button>
+    </div>
+
+    <div id="app">
+
+        <div class="content"> <!-- Added this wrapper -->
+            <main>
+
+                <button class="btn" id="question" @click="showModal = true">
+                    <i class="fa fa-question"></i>
+                </button>
+
+                <div v-if="showModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" @click="showModal = false">&times;</span>
+                      <h2>About Interactive Stories</h2>
+                      <p>Welcome to Interactive Stories! Here, your choices shape the journey.</p>
+                      <p>How to Use This Page: </p>
+                      <p>1. Click "Start Story" on the story of your choice.</p>
+                      <p>2. Read the introduction and select an option to shape the story's direction.</p>
+                      <p>3. Continue making choices to progress through the story.</p>
+                      <p>4. If you're unsatisfied with the story or reacehd the end of your story, type "stop" at any time to view
+                        an overview of the story you've created so far.</p>
+                      <p>5. Then, You can then return to the home page and start a new story.</p>
+                      <button class="modal-close-btn" @click="showModal = false">Close</button>
+                    </div>
+                  </div>
+            </main>
+        </div> <!-- End of the new wrapper -->
+
+        <footer>
+            <p>&copy; 2025 Interactive Stories. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+    <script src="../js/thankyou.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showModal: false
+            }
+        });
+    </script>
+</body>
+
+</html>
